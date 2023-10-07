@@ -1,7 +1,7 @@
 #[cfg(feature="std")]
-use std::marker::PhantomData;
+use std::{arch::asm, marker::PhantomData};
 #[cfg(not(feature="std"))]
-use core::marker::PhantomData;
+use core::{arch::asm, marker::PhantomData};
 
 /// Trait for limiting [Port] to only being able to read/write u8/16/32.
 pub(crate) trait PortRW {
